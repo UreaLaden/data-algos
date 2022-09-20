@@ -56,7 +56,7 @@
 5.  How should I label the important pieces of data that are a part of the problem?
  
 */
-
+// O(n) Time | O()
 const countUniqueValues = (arr) => {
   //determine length of the array
   let count = 0
@@ -85,8 +85,36 @@ const countUniqueValues = (arr) => {
   
 }
 
-console.log(countUniqueValues([1,1,1,1,1,2])) //2
+// console.log(countUniqueValues([1,1,1,1,1,2])) //2
+// show(countUniqueValues([1,2,3,4,4,4,7,7,12,12,13])) //7
+// console.log(countUniqueValues([])) // 0
+// console.log(countUniqueValues([-2,-1,-1,0,1])) // 4
+
+
+/* Cell ID: p8gft3is*/
+// O(n) Time and O(1) space
+const countUniqueValues_V2 = (arr) =>{
+  let i = 0;
+  if (arr.length === i) return i
+  for(let j = 1;j<arr.length;j++){
+    if(arr[i] !== arr[j]){
+      i++;
+      arr[i] = arr[j];
+    }
+  }
+  return i + 1;
+}
+
+// console.log(countUniqueValues_V2([1,1,1,1,1,2])) //2
+// console.log(countUniqueValues([])) // 0
+// console.log(countUniqueValues([-2,-1,-1,0,1])) // 4
+
+let t1 = performance.now()
 show(countUniqueValues([1,2,3,4,4,4,7,7,12,12,13])) //7
-console.log(countUniqueValues([])) // 0
-console.log(countUniqueValues([-2,-1,-1,0,1])) // 4
+let t2 = performance.now()
+let t3 = performance.now()
+countUniqueValues([1,2,3,4,4,4,7,7,12,12,13]) //7
+let t4 = performance.now()
+console.log(`Time Elapsed: ${(t2 - t1) / 1000} seconds`);//Time Elapsed: 0.00019999998807907106 seconds
+console.log(`Time Elapsed: ${(t4 - t3) / 1000} seconds`);//Time Elapsed: 0 seconds
 
