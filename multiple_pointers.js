@@ -110,11 +110,17 @@ const countUniqueValues_V2 = (arr) =>{
 // console.log(countUniqueValues([-2,-1,-1,0,1])) // 4
 
 let t1 = performance.now()
-show(countUniqueValues([1,2,3,4,4,4,7,7,12,12,13])) //7
+countUniqueValues([1,2,3,4,4,4,7,7,12,12,13]) //7
+countUniqueValues_V2([1,1,1,1,1,2]) //2
+countUniqueValues([]) // 0
+countUniqueValues([-2,-1,-1,0,1])
 let t2 = performance.now()
 let t3 = performance.now()
 countUniqueValues([1,2,3,4,4,4,7,7,12,12,13]) //7
+countUniqueValues_V2([1,1,1,1,1,2]) //2
+countUniqueValues([]) // 0
+countUniqueValues([-2,-1,-1,0,1])
 let t4 = performance.now()
-console.log(`Time Elapsed: ${(t2 - t1) / 1000} seconds`);//Time Elapsed: 0.00019999998807907106 seconds
+console.log(`Time Elapsed: ${(t2 - t1) / 1000} seconds`);//Time Elapsed: 0.00010000002384185791 seconds
 console.log(`Time Elapsed: ${(t4 - t3) / 1000} seconds`);//Time Elapsed: 0 seconds
 
