@@ -30,8 +30,6 @@ A **process** or **set of steps** to accomplish a certain task.
 3.  What are the outputs that should come from the solution to the problem?
 4.  Can the outputs be determined from the inputs? In other words, do I have enough information to solve the problem?
 5.  How should I label the important pieces of data that are a part of the problem?
- 
-
 */
 
 /* Cell ID: 5otd8vxh*/
