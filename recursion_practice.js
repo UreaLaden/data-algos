@@ -190,11 +190,31 @@ const flatten_V2 = (arr,newArr=[]) => {
 // console.log(flatten([1, 2, 3, [4, 5] ])); // [1, 2, 3, 4, 5]
 // console.log(flatten([1, [2, [3, 4], [[5]]]])); // [1, 2, 3, 4, 5]
 // console.log(flatten([[1],[2],[3]])); // [1,2,3]
-t1 = performance.now()
-console.log(flatten([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]])); // [1,2,3
-t2 = performance.now()
-console.log(`Time: ${t2-t1} seconds`)
-t1 = performance.now()
-console.log(flatten_V2([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]])); // [1,2,3
-t2 = performance.now()
-console.log(`Time: ${t2-t1} seconds`)
+// t1 = performance.now()
+// console.log(flatten([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]])); // [1,2,3
+// t2 = performance.now()
+// console.log(`Time: ${t2-t1} seconds`)
+// t1 = performance.now()
+// console.log(flatten_V2([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]])); // [1,2,3
+// t2 = performance.now()
+// console.log(`Time: ${t2-t1} seconds`)
+
+
+/**
+ * Write a recursive function called capitalizeFirst. Give an array of strings
+ * capitalize the first letter of each string in the array
+ */
+
+const capitalizeFirst = (arr,res=[]) => {
+    for (let i=0;i<arr.length;i++){
+        res.push(arr[i][0].toUpperCase().concat(arr[i].substring(1)))
+    }
+    return res;
+}
+const capitalizeFirst_Recurse = (arr,res=[]) => {
+    if(arr.length <= 0) return res;
+    res.push(arr[0][0].toUpperCase().concat(arr[0].substring(1)));
+    return capitalizeFirst_Recurse(arr.splice(1),res)
+}
+
+console.log(capitalizeFirst_Recurse(['car','taco','banana'])); // ['Car','Taco','Banana']
